@@ -22,15 +22,15 @@
 
 # [START vpc_compute_basic_vm_custom_vpc_network]
 resource "google_compute_network" "custom" {
-  name                    = "my-network"
+  name                    = var.vpc_name
   auto_create_subnetworks = true
 }
 # [END vpc_compute_basic_vm_custom_vpc_network]
 
 # [START vpc_compute_basic_vm_custom_vpc_subnet]
 resource "google_compute_subnetwork" "custom" {
-  name          = "my-subnet"
-  ip_cidr_range = "10.0.1.0/24"
+  name          = var.subnets_name
+  ip_cidr_range = var.ip_cidr_range
   region        = var.region
   network       = google_compute_network.custom.id
 }
@@ -41,7 +41,7 @@ resource "google_compute_subnetwork" "custom" {
 # Create a VM in a custom VPC network and subnet
 
 resource "google_compute_instance" "custom_subnet" {
-  name         = "my-vm-instance"
+  name         = var.vm_name
   tags         = ["allow-ssh"]
   zone         = var.zone
   machine_type = var.machine_type
@@ -51,7 +51,7 @@ resource "google_compute_instance" "custom_subnet" {
   }
   boot_disk {
     initialize_params {
-      image = "debian-cloud/debian-10"
+      image = var.vm_disk_image
     }
   }
 }
