@@ -1,6 +1,6 @@
 variable "gcp_terraform_sa_creds" {
     description = "GCP SA Credntial file json format"
-    type        = map(object({}))
+    type        = object()
 }
 
 variable "project_id" {
