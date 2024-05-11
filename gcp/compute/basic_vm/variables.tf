@@ -9,7 +9,7 @@ variable "project_id" {
 }
 
 variable "region" {
-    description = "Gcp VM Region"
+    description = "Gcp provider/VM Region"
     type        = string
 }
 
