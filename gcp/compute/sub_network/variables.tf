@@ -13,7 +13,17 @@ variable "ip_cidr_range" {
     type        = string
 }
 
-variable "zone" {
-    description = "Gcp VM Zone"
+variable "gcp_terraform_sa_creds" {
+    description = "GCP SA Credntial file json format"
+    type        = map(string)
+}
+
+variable "project_id" {
+    description = "GCP Project Id"
+    type        = string
+}
+
+variable "region" {
+    description = "Gcp VM Region"
     type        = string
 }
