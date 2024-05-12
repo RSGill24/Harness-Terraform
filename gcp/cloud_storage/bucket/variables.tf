@@ -35,7 +35,7 @@ variable "public_access_prevention" {
 
 variable "uniform_bucket_level_access" {
     description = "Should provide uniform bucket level access"
-    type        = bool
+    type        = string
 }
 
 variable "age" {
