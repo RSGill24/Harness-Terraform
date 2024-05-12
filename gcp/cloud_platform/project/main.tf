@@ -8,3 +8,8 @@ resource "google_project" "project_in_a_folder" {
 #    display_name = var.folder_display_name
 #    parent       = var.parent_dir
 #}
+
+resource "google_project_service" "compute" {
+    project = google_project.my_project.project_id
+    service = "compute.googleapis.com"
+}
