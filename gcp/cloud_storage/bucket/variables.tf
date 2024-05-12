@@ -30,12 +30,12 @@ variable "destroy" {
 
 variable "public_access_prevention" {
     description = "Should prevent public access for cloud storage"
-    type        = bool
+    type        = string
 }
 
 variable "uniform_bucket_level_access" {
     description = "Should provide uniform bucket level access"
-    type        = string
+    type        = bool
 }
 
 variable "age" {
