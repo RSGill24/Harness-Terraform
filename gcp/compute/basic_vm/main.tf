@@ -65,9 +65,13 @@ resource "google_compute_instance" "custom_subnet" {
     }
   }
 
-  access_config {
+  network_interface {
+    network = "default"
+
+    access_config {
       nat_ip = var.nat_ip
       network_tier = var.network_tier
+    }
   }
 }
 # [END compute_instances_create_with_subnet]
