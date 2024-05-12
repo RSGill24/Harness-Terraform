@@ -1,6 +1,7 @@
 resource "google_project" "project_in_a_folder" {
     name        = var.project_name
     project_id  = var.project_id
+    org_id      = "0"
 #    folder_id   = google_folder.department.name
 }
 
