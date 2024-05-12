@@ -28,3 +28,8 @@ resource "aws_vpc" "test" {
     Name = var.vpc_name
   }
 }
+
+resource "aws_subnet"  "test" {
+  vpc_id = aws_vpc.test.id
+  cidr_block = var.subnet_cidr
+}
