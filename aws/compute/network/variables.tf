@@ -29,6 +29,11 @@ variable "cidr" {
     type        = string
 }
 
+variable "subnet_cidr" {
+    description = "Classless Inter-Domain Routing for subnet"
+    type        = string
+}
+
 variable "ipv4_netmask_length" {
     description = "ipv4 netmask length"
     type        = number
