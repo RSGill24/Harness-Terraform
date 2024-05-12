@@ -34,6 +34,16 @@ resource "google_compute_subnetwork" "custom" {
   region        = var.region
   network       = google_compute_network.custom.id
 }
+
+resource "google_compute_firewall" "allow_rdp" {
+  name         = var.firewall_name
+  network      = google_compute_network.custom.self_link
+  target_tags  = var.firewall_tag
+  allow {
+      protocol = var.protocol
+      ports    = var.ports
+  }
+}
 # [END vpc_compute_basic_vm_custom_vpc_subnet]
 
 # [START compute_instances_create_with_subnet]
@@ -53,6 +63,11 @@ resource "google_compute_instance" "custom_subnet" {
     initialize_params {
       image = var.vm_disk_image
     }
+  }
+
+  access_config {
+      nat_ip = var.nat_ip
+      network_tier = var.network_tier
   }
 }
 # [END compute_instances_create_with_subnet]
