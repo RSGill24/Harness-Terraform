@@ -38,6 +38,7 @@ resource "google_compute_subnetwork" "custom" {
 resource "google_compute_firewall" "allow_rdp" {
   name         = var.firewall_name
   network      = google_compute_network.custom.self_link
+  source_tags = ["web"]
   target_tags  = ["bastion"]
   allow {
       protocol = var.protocol
