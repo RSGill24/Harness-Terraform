@@ -70,8 +70,8 @@ resource "google_compute_instance" "custom_subnet" {
     network = "default"
 
     access_config {
-      nat_ip = var.nat_ip
-      network_tier = var.network_tier
+#      nat_ip = var.nat_ip
+#      network_tier = var.network_tier
     }
   }
 }
