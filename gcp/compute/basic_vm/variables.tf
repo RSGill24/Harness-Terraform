@@ -70,5 +70,5 @@ variable "protocol" {
 
 variable "ports" {
     description = "allow ports for firwall"
-    type        = list(string)
+    type        = string
 }
