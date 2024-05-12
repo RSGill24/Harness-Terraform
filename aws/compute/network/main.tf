@@ -29,7 +29,7 @@ resource "aws_vpc" "test" {
   }
 }
 
-resource "aws_subnet"  "test" {
-  vpc_id = aws_vpc.test.id
-  cidr_block = var.subnet_cidr
-}
+#resource "aws_subnet"  "test" {
+#  vpc_id = aws_vpc.test.id
+#  cidr_block = var.subnet_cidr
+#}
