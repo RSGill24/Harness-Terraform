@@ -10,6 +10,6 @@ resource "google_project" "project_in_a_folder" {
 #}
 
 resource "google_project_service" "compute" {
-    project = google_project.my_project.project_id
+    project = google_project.project_in_a_folder.project_id
     service = "compute.googleapis.com"
 }
