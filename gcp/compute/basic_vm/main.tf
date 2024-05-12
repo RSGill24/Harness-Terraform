@@ -41,7 +41,7 @@ resource "google_compute_firewall" "allow_rdp" {
   target_tags  = ["bastion"]
   allow {
       protocol = var.protocol
-      ports    = var.ports
+      ports    = jsonencode(var.ports)
   }
 }
 # [END vpc_compute_basic_vm_custom_vpc_subnet]
