@@ -65,15 +65,17 @@ resource "google_compute_instance" "custom_subnet" {
       image = var.vm_disk_image
     }
   }
-
-  network_interface {
-    network = "default"
-
-    access_config {
+  metadata = {
+    block-project-ssh-keys = var.block_project_ssh_keys
+  }
+#  network_interface {
+#    network = "default"
+#
+#    access_config {
 #      nat_ip = var.nat_ip
 #      network_tier = var.network_tier
-    }
-  }
+#    }
+#  }
 }
 # [END compute_instances_create_with_subnet]
 # [END compute_basic_vm_parent_tag]
