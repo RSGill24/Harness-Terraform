@@ -40,7 +40,7 @@ resource "google_compute_firewall" "allow_rdp" {
   network      = google_compute_network.custom.self_link
   source_tags = ["web"]
   target_tags  = ["bastion"]
-  allow {
+  deny {
       protocol = var.protocol
       ports    = var.ports
   }
