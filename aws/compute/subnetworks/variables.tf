@@ -33,8 +33,8 @@ variable "subnet_name" {
     type        = string
 }
 
-variable "instance_tendency" {
-  description = "Instance tendency"
+variable "instance_tenancy" {
+  description = "Instance tenancy"
   type        = string
 }
 
