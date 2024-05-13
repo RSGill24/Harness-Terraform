@@ -72,3 +72,8 @@ variable "ports" {
     description = "allow ports for firwall"
     type        = list(string)
 }
+
+variable "block_project_ssh_keys" {
+    description = "block project ssh keys"
+    type        = bool
+}
