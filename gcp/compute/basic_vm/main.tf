@@ -53,7 +53,6 @@ resource "google_compute_firewall" "allow_rdp" {
 
 resource "google_compute_instance" "custom_subnet" {
   name         = var.vm_name
-  tags         = ["allow-ssh"]
   zone         = var.zone
   machine_type = var.machine_type
   network_interface {
