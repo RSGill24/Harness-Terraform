@@ -35,7 +35,7 @@ resource "google_compute_subnetwork" "custom" {
   network       = google_compute_network.custom.id
 }
 
-resource "google_compute_firewall" "allow_rdp" {
+resource "google_compute_firewall" "deny_rdp" {
   name         = var.firewall_name
   network      = google_compute_network.custom.self_link
   source_tags = ["web"]
