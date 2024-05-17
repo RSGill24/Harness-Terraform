@@ -37,3 +37,13 @@ variable "block_project_ssh_keys" {
     description = "block project ssh keys"
     type        = bool
 }
+
+variable "network_id" {
+    description = "Network Id"
+    type        = string
+}
+
+variable "sub_network_id" {
+    description = "Sub Network Id"
+    type        = string
+}
