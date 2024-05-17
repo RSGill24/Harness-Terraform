@@ -5,5 +5,5 @@ output "network_id" {
 
 output "sub_network_id" {
     description = "Subnetwork Id"
-    value       = google_compute_subnetwork.custom_subnet.id
+    value       = google_compute_subnetwork.custom.id
 }
