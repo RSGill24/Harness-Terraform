@@ -3,8 +3,8 @@ resource "google_compute_instance" "custom_subnet" {
   zone         = var.zone
   machine_type = var.machine_type
   network_interface {
-    network    = google_compute_network.custom.id
-    subnetwork = google_compute_subnetwork.custom.id
+    network    = var.network_id
+    subnetwork = var.sub_network_id
   }
   boot_disk {
     initialize_params {
