@@ -1,24 +1,24 @@
-variables "client_id" {
+variable "client_id" {
   description = "Client Id"
   type        = string
 }
 
-variables "client_secret" {
+variable "client_secret" {
   description = "Client Secret"
   type        = string
 }
 
-variables "env" {
+variable "env" {
   description = "Azure Environment"
   type        = string
 }
 
-variables "subscription_id" {
+variable "subscription_id" {
   description = "Subscription Id"
   type        = string
 }
 
-variables "tenant_id" {
+variable "tenant_id" {
   description = "Tenant Id"
   type        = string
 }
