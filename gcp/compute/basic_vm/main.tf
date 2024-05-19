@@ -75,10 +75,10 @@ resource "google_compute_instance" "custom_subnet" {
 #      network_tier = var.network_tier
 #    }
 #  }
+}
+# [END compute_instances_create_with_subnet]
+# [END compute_basic_vm_parent_tag]
 
 terraform {  
   backend "gcs" {}
 }
-}
-# [END compute_instances_create_with_subnet]
-# [END compute_basic_vm_parent_tag]
