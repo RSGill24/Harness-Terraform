@@ -33,3 +33,7 @@ resource "aws_vpc" "test" {
 #  vpc_id = aws_vpc.test.id
 #  cidr_block = var.subnet_cidr
 #}
+
+terraform {
+  backend "s3" {}
+}
