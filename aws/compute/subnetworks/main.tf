@@ -15,3 +15,7 @@ resource "aws_subnet"  "subnet" {
       Name = var.subnet_name
   }
 }
+
+terraform {
+  backend "s3" {}
+}
