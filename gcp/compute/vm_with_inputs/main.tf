@@ -14,6 +14,11 @@ resource "google_compute_instance" "custom_subnet" {
   metadata = {
     block-project-ssh-keys = var.block_project_ssh_keys
   }
+
+terraform {  
+  backend "gcs" {}
+}
+
 #  network_interface {
 #    network = "default"
 #
