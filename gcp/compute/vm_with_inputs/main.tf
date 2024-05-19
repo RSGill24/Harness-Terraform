@@ -24,7 +24,3 @@ resource "google_compute_instance" "custom_subnet" {
 #    }
 #  }
 }
-
-terraform {  
-  backend "gcs" {}
-}
