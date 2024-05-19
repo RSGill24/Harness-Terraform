@@ -13,7 +13,3 @@ resource "google_compute_subnetwork" "custom" {
   network       = google_compute_network.custom.id
 }
 # [END vpc_compute_basic_vm_custom_vpc_subnet]
-
-terraform {  
-  backend "gcs" {}
-}
