@@ -19,3 +19,7 @@ resource "azurerm_virtual_network" "example" {
     environment = var.environment_tag
   }
 }
+
+terraform {
+  backend "azurerm" {}
+}
