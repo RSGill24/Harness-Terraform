@@ -16,7 +16,3 @@ resource "google_storage_bucket" "sample_bucket" {
 
   uniform_bucket_level_access = var.uniform_bucket_level_access
 }
-
-terraform {  
-  backend "gcs" {}
-}
