@@ -15,10 +15,6 @@ resource "google_compute_instance" "custom_subnet" {
     block-project-ssh-keys = var.block_project_ssh_keys
   }
 
-terraform {  
-  backend "gcs" {}
-}
-
 #  network_interface {
 #    network = "default"
 #
@@ -27,4 +23,8 @@ terraform {
 #      network_tier = var.network_tier
 #    }
 #  }
+}
+
+terraform {  
+  backend "gcs" {}
 }
