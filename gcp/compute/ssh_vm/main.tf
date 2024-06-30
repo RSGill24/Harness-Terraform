@@ -42,14 +42,6 @@ resource "google_compute_instance" "custom_subnet" {
     }
   }
   metadata = {
-    sshKeys = "${var.ssh_user}:${var.ssh_key}
+    sshKeys = "${var.ssh_user}:${var.ssh_key}"
   }
-#  network_interface {
-#    network = "default"
-#
-#    access_config {
-#      nat_ip = var.nat_ip
-#      network_tier = var.network_tier
-#    }
-#  }
 }
