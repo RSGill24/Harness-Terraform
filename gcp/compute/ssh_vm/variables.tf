@@ -81,5 +81,4 @@ variable "ssh_user" {
 variable "ssh_key" {
     description = "ssh key"
     type        = string
-    default     = <<EOF
 }
