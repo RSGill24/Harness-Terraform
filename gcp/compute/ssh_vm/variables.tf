@@ -48,31 +48,6 @@ variable "vm_disk_image" {
     type        = string
 }
 
-variable "nat_ip" {
-    description = "Access config Nat ip"
-    type        = string
-}
-
-variable "network_tier" {
-    description = "Access config Network tier"
-    type        = string
-}
-
-variable "firewall_name" {
-    description = "firewall name"
-    type        = string
-}
-
-variable "protocol" {
-    description = "protocol type"
-    type        = string
-}
-
-variable "ports" {
-    description = "allow ports for firwall"
-    type        = list(string)
-}
-
 variable "ssh_user" {
     description = "ssh key user"
     type        = string
