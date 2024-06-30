@@ -73,7 +73,12 @@ variable "ports" {
     type        = list(string)
 }
 
-variable "block_project_ssh_keys" {
-    description = "block project ssh keys"
-    type        = bool
+variable "ssh_user" {
+    description = "ssh key user"
+    type        = string
+}
+
+variable "ssh_key" {
+    description = "ssh key"
+    type        = string
 }
