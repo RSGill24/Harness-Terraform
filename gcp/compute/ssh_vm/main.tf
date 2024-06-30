@@ -12,16 +12,6 @@ resource "google_compute_subnetwork" "custom" {
   network       = google_compute_network.custom.id
 }
 
-resource "google_compute_firewall" "deny_rdp" {
-  name         = var.firewall_name
-  network      = google_compute_network.custom.self_link
-  source_tags = ["web"]
-  target_tags  = ["bastion"]
-  deny {
-      protocol = var.protocol
-      ports    = var.ports
-  }
-}
 # [END vpc_compute_basic_vm_custom_vpc_subnet]
 
 # [START compute_instances_create_with_subnet]
