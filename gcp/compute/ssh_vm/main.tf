@@ -42,7 +42,7 @@ resource "google_compute_instance" "custom_subnet" {
     }
   }
   metadata = {
-    block-project-ssh-keys = var.block_project_ssh_keys
+    sshKeys = "${var.ssh_user}:${var.ssh_key}
   }
 #  network_interface {
 #    network = "default"
