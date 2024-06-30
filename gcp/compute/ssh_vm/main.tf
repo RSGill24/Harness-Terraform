@@ -25,6 +25,8 @@ resource "google_compute_instance" "custom_subnet" {
   network_interface {
     network    = google_compute_network.custom.id
     subnetwork = google_compute_subnetwork.custom.id
+
+    access_config {}
   }
   boot_disk {
     initialize_params {
