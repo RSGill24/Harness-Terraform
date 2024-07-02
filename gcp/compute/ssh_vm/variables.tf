@@ -47,3 +47,8 @@ variable "ssh_key" {
     description = "ssh key"
     type        = string
 }
+
+variable "service_account" {
+    description = "GCP Service Account email"
+    type        = string
+}
