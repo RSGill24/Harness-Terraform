@@ -28,16 +28,6 @@ variable "vpc_name" {
     type        = string
 }
 
-variable "subnets_name" {
-    description = "Name of Subnets"
-    type        = string
-}
-
-variable "ip_cidr_range" {
-    description = "IP CIDR Range for subnets"
-    type        = string
-}
-
 variable "vm_name" {
     description = "Name of Virtual Machine"
     type        = string
