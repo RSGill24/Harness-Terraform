@@ -6,7 +6,7 @@ resource "google_compute_network" "vpc_network" {
 
 
 resource "google_compute_firewall" "default" {
-  name    = "default-allow-ssh"
+  name    = "allow-ssh"
   network = google_compute_network.vpc_network.self_link
 
   allow {
