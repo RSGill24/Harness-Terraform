@@ -1,0 +1,20 @@
+policy "restrict-vm-network-interfaces" {
+  enforcement_level = "hard-mandatory"
+  
+  rule "allowed-networks" {
+    allowed_networks = ["default", "custom-vpc-1", "custom-vpc-2"]
+    condition = all gcp_compute_instance as instance {
+      all instance.network_interface as interface {
+        interface.network matches "(${join("|", allowed_networks)})$"
+      }
+    }
+  }
+
+  rule "no-public-ip" {
+    condition = all gcp_compute_instance as instance {
+      all instance.network_interface as interface {
+        interface.access_config is empty
+      }
+    }
+  }
+}
