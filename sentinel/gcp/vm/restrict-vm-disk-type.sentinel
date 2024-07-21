@@ -1,0 +1,15 @@
+policy "restrict-vm-disk-types" {
+  enforcement_level = "hard-mandatory"
+  
+  rule "allowed-disk-types" {
+    allowed_types = ["pd-standard", "pd-balanced", "pd-ssd"]
+    condition = all gcp_compute_instance as instance {
+      all instance.boot_disk as boot_disk {
+        boot_disk.type in allowed_types
+      }
+      all instance.attached_disk as attached_disk {
+        attached_disk.type in allowed_types
+      }
+    }
+  }
+}
