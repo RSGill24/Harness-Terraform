@@ -1,0 +1,10 @@
+policy "restrict-vm-machine-types" {
+  enforcement_level = "hard-mandatory"
+  
+  rule "allowed-machine-types" {
+    allowed_types = ["e2-micro", "e2-small", "e2-standard"]
+    condition = all gcp_compute_instance as instance {
+      instance.machine_type matches "^(${join("|", allowed_types)})-[1-8]$"
+    }
+  }
+}
