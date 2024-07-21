@@ -1,6 +1,6 @@
 variable "gcp_terraform_sa_creds" {
     description = "GCP SA Credntial file json format"
-    type        = map(string)
+    type        = string
 }
 
 variable "project_id" {
@@ -28,16 +28,6 @@ variable "vpc_name" {
     type        = string
 }
 
-variable "subnets_name" {
-    description = "Name of Subnets"
-    type        = string
-}
-
-variable "ip_cidr_range" {
-    description = "IP CIDR Range for subnets"
-    type        = string
-}
-
 variable "vm_name" {
     description = "Name of Virtual Machine"
     type        = string
@@ -48,32 +38,17 @@ variable "vm_disk_image" {
     type        = string
 }
 
-variable "nat_ip" {
-    description = "Access config Nat ip"
+variable "ssh_user" {
+    description = "ssh key user"
     type        = string
 }
 
-variable "network_tier" {
-    description = "Access config Network tier"
+variable "ssh_key" {
+    description = "ssh key"
     type        = string
 }
 
-variable "firewall_name" {
-    description = "firewall name"
+variable "service_account" {
+    description = "GCP Service Account email"
     type        = string
-}
-
-variable "protocol" {
-    description = "protocol type"
-    type        = string
-}
-
-variable "ports" {
-    description = "allow ports for firwall"
-    type        = list(string)
-}
-
-variable "block_project_ssh_keys" {
-    description = "block project ssh keys"
-    type        = bool
 }
