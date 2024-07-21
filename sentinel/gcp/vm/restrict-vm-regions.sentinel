@@ -1,0 +1,10 @@
+policy "restrict-vm-regions" {
+  enforcement_level = "soft-mandatory"
+  
+  rule "allowed-regions" {
+    allowed_regions = ["us-east1"]
+    condition = all gcp_compute_instance as instance {
+      instance.zone matches "^(${join("|", allowed_regions)})-[a-c]$"
+    }
+  }
+}
